@@ -1,0 +1,51 @@
+.users{
+  padding: 80px 0;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page,
+.ellipsis {
+  padding: 5px;
+  margin: 0 2px;
+  padding:8px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+
+
+
+}
+
+.page:hover {
+  background-color: #eee;
+}
+
+.page.active {
+  border:2px solid rgb(45 36 204);
+  border-radius: 5px;
+
+
+}
+
+.prev,
+.next {
+  margin: 0 2px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: rgb(45 36 204);
+  color:#FFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.prev[disabled],
+.next[disabled] {
+  background-color: rgba(44, 36, 204, 0.708);
+  cursor: not-allowed;
+}

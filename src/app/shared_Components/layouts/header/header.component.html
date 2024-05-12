@@ -1,0 +1,18 @@
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <a [routerLink]="['/']"><img src="assets/images/logo.webp"></a>
+      </div>
+      <div class="menu">
+        <ul class="nav-bar">
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/users']">Users</a></li>
+
+        </ul>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="search By User Id" (keyup)="searchForUser($event)">
+      </div>
+    </nav>
+  </div>
+</header>

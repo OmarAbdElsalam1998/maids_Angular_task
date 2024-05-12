@@ -1,0 +1,11 @@
+.user-details {
+  padding: 60px;
+
+
+}
+.user-details .box{
+  padding: 60px 15px;
+  box-shadow: 0 0 17px #dbdbdb;
+  border-radius: 12px;
+
+}

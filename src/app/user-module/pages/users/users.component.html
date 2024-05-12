@@ -1,0 +1,47 @@
+<!-- Start Users section -->
+<main>
+  <section class="users">
+    <div class="container" >
+      <!-- Display users in exists -->
+      <div class="row" *ngIf="usersData?.length>0">
+       <div class="col-md-4 col-lg-3" *ngFor="let user of usersData" >
+         <app-user-card [userData]="user"></app-user-card>
+
+        </div>
+      </div>
+
+
+      <!-- display message in no users Exists -->
+      <div class="alert alert-danger" *ngIf="usersData?.length==0">
+         no users Exists
+      </div>
+
+
+
+      <div class="pagination" *ngIf="usersData?.length>numberOfItemsPerPage-1">
+        <button class="prev" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Prev</button>
+        <ng-container *ngIf="visiblePages[0] > 1">
+          <a class="page" (click)="goToPage(1)">1</a>
+          <span class="ellipsis">...</span>
+        </ng-container>
+        <ng-container *ngFor="let page of visiblePages">
+          <a class="page" (click)="goToPage(page)" [class.active]="page === currentPage">{{ page }}</a>
+        </ng-container>
+        <ng-container *ngIf="visiblePages[visiblePages.length - 1] < totalPages">
+          <span class="ellipsis">...</span>
+          <a class="page" (click)="goToPage(totalPages)">{{ totalPages }}</a>
+        </ng-container>
+        <button class="next" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="loader text-center" *ngIf="!usersData">
+    <div class="spinner-border text-primary" role="status">
+    </div>
+  </div>
+</main>
+
+<!-- End Users section -->
+
+
